@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ─── DARK THEME (default Astro theme) ─── */
+  :root,
+  .dark {
+    --background: 224 45% 6%;
+    --foreground: 220 20% 98%;
+
+    --card: 228 35% 12%;
+    --card-foreground: 220 20% 98%;
+
+    --popover: 228 35% 12%;
+    --popover-foreground: 220 20% 98%;
+
+    --primary: 187 100% 50%;
+    --primary-foreground: 224 45% 6%;
+
+    --secondary: 340 100% 62%;
+    --secondary-foreground: 220 20% 98%;
+
+    --muted: 228 25% 18%;
+    --muted-foreground: 224 20% 68%;
+
+    --accent: 262 100% 65%;
+    --accent-foreground: 220 20% 98%;
+
+    --destructive: 340 100% 62%;
+    --destructive-foreground: 220 20% 98%;
+
+    --border: 228 20% 18%;
+    --input: 228 20% 18%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 228 35% 9%;
+    --sidebar-foreground: 220 20% 85%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 224 45% 6%;
+    --sidebar-accent: 228 25% 15%;
+    --sidebar-accent-foreground: 220 20% 98%;
+    --sidebar-border: 228 20% 15%;
+    --sidebar-ring: 187 100% 50%;
+
+    /* Astro custom color tokens */
+    --astro-cyan: 187 100% 50%;
+    --astro-pink: 340 100% 62%;
+    --astro-violet: 262 100% 65%;
+    --astro-success: 145 80% 42%;
+    --astro-warning: 38 100% 55%;
+    --astro-cash: 145 70% 45%;
+    --astro-bank: 210 100% 60%;
+
+    /* Backward compatibility aliases */
+    --nebula-cyan: var(--astro-cyan);
+    --nebula-pink: var(--astro-pink);
+    --nebula-violet: var(--astro-violet);
+    --nebula-success: var(--astro-success);
+    --nebula-warning: var(--astro-warning);
+    --nebula-cash: var(--astro-cash);
+    --nebula-bank: var(--astro-bank);
+
+    --glass-bg: 228 35% 12% / 0.65;
+    --glass-border: 0 0% 100% / 0.09;
+    --glow-cyan: 0 0 22px hsl(187 100% 50% / 0.18);
+    --glow-pink: 0 0 22px hsl(340 100% 62% / 0.18);
+    --glow-violet: 0 0 22px hsl(262 100% 65% / 0.18);
+    --glow-cash: 0 0 22px hsl(145 70% 45% / 0.22);
+    --glow-bank: 0 0 22px hsl(210 100% 60% / 0.22);
+  }
+
+  /* ─── LIGHT THEME (Astro Light) ─── */
+  .light {
+    --background: 210 40% 97%;
+    --foreground: 213 50% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 50% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 50% 12%;
+
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 30% 88%;
+    --secondary-foreground: 213 50% 12%;
+
+    --muted: 210 30% 92%;
+    --muted-foreground: 213 25% 45%;
+
+    --accent: 220 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 84%;
+    --input: 210 30% 84%;
+    --ring: 210 100% 45%;
+
+    --sidebar-background: 210 50% 94%;
+    --sidebar-foreground: 213 50% 15%;
+    --sidebar-primary: 210 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 88%;
+    --sidebar-accent-foreground: 213 50% 12%;
+    --sidebar-border: 210 30% 80%;
+    --sidebar-ring: 210 100% 45%;
+
+    /* Astro custom tokens light mode */
+    --astro-cyan: 210 100% 45%;
+    --astro-pink: 340 85% 50%;
+    --astro-violet: 250 90% 58%;
+    --astro-success: 145 70% 35%;
+    --astro-warning: 35 90% 45%;
+    --astro-cash: 145 65% 38%;
+    --astro-bank: 210 100% 45%;
+
+    --nebula-cyan: var(--astro-cyan);
+    --nebula-pink: var(--astro-pink);
+    --nebula-violet: var(--astro-violet);
+    --nebula-success: var(--astro-success);
+    --nebula-warning: var(--astro-warning);
+    --nebula-cash: var(--astro-cash);
+    --nebula-bank: var(--astro-bank);
+
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 210 30% 70% / 0.5;
+    --glow-cyan: 0 0 18px hsl(210 100% 45% / 0.18);
+    --glow-pink: 0 0 18px hsl(340 85% 50% / 0.18);
+    --glow-violet: 0 0 18px hsl(250 90% 58% / 0.18);
+    --glow-cash: 0 0 18px hsl(145 65% 38% / 0.2);
+    --glow-bank: 0 0 18px hsl(210 100% 45% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Dark body - Astro cosmic background */
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body,
+  :root body {
+    background-image:
+      radial-gradient(ellipse at 15% 10%, hsl(262 100% 65% / 0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 90%, hsl(187 100% 50% / 0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 50%, hsl(340 100% 62% / 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+
+  /* Light body – subtle blue gradient */
+  .light body {
+    background-image:
+      radial-gradient(ellipse at 15% 10%, hsl(210 100% 60% / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 90%, hsl(220 100% 55% / 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(200 80% 70% / 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(228 20% 25%);
+    border-radius: 3px;
+  }
+  .light ::-webkit-scrollbar-thumb {
+    background: hsl(210 30% 78%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(187 100% 50% / 0.5);
+  }
+  .light ::-webkit-scrollbar-thumb:hover {
+    background: hsl(210 100% 55% / 0.6);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--glass-border));
+    border-radius: var(--radius);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .glass-panel-hover:hover {
+    border-color: hsl(var(--astro-cyan) / 0.35);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+
+  .glow-pink {
+    box-shadow: var(--glow-pink);
+  }
+
+  .glow-violet {
+    box-shadow: var(--glow-violet);
+  }
+
+  .glow-cash {
+    box-shadow: var(--glow-cash);
+  }
+
+  .glow-bank {
+    box-shadow: var(--glow-bank);
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, hsl(var(--astro-cyan)), hsl(var(--astro-violet)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-pink {
+    background: linear-gradient(135deg, hsl(var(--astro-pink)), hsl(var(--astro-violet)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .font-mono-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .neon-border {
+    position: relative;
+  }
+  .neon-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(var(--astro-cyan) / 0.5), hsl(var(--astro-violet) / 0.3), hsl(var(--astro-pink) / 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .progress-glow {
+    background: linear-gradient(90deg, hsl(var(--astro-cyan)), hsl(var(--astro-violet)));
+    box-shadow: 0 0 10px hsl(187 100% 50% / 0.5);
+  }
+
+  /* Light theme: nicer chart tooltip */
+  .light .recharts-default-tooltip {
+    background: hsl(0 0% 100%) !important;
+    border: 1px solid hsl(210 30% 84%) !important;
+    color: hsl(213 50% 12%) !important;
+  }
+}
